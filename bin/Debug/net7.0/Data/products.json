@@ -1,0 +1,44 @@
+[
+  {
+    "Id": "831e1307-5251-44dc-81ae-e7aa33965e96",
+    "Name": "t-shirt",
+    "Description": "comfortable t-shirt",
+    "Price": 70.50,
+    "ImageUrl": ""
+  },
+  {
+    "Id": "a0ad0195-cfba-4e4d-8647-30859bb5b258",
+    "Name": "pants",
+    "Description": "comfortable pants",
+    "Price": 80.50,
+    "ImageUrl": ""
+  },
+  {
+    "Id": "4f96d488-e2f3-4dc9-baf2-f8a8997eb22c",
+    "Name": "jacket",
+    "Description": "comfortable jacket",
+    "Price": 200.50,
+    "ImageUrl": ""
+  },
+  {
+    "Id": "b7c4be94-8476-4e8b-92ba-eb3eafdf6a84",
+    "Name": "dress",
+    "Description": " comfortable dress",
+    "Price": 100,
+    "ImageUrl": ""
+  },
+  {
+    "Id": "5ed3cf9e-e8b0-4fd1-9e1e-aaa7d050ff94",
+    "Name": "dress11",
+    "Description": "comfortable dress11",
+    "Price": 700,
+    "ImageUrl": ""
+  },
+  {
+    "Id": "649e8878-3be3-4a33-b92f-4db954c25b6d",
+    "Name": "dress22",
+    "Description": "comfortable dress22",
+    "Price": 701,
+    "ImageUrl": ""
+  }
+]

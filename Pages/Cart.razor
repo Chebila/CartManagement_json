@@ -1,0 +1,84 @@
+﻿@page "/cart"
+@using ECommerceApp.Models
+@inject ECommerceApp.ViewModels.CartViewModel CartVM
+
+<h3 class="mb-4">Your Cart</h3>
+
+@if (CartVM.Items == null)
+{
+    <p>Loading...</p>
+}
+else if (!CartVM.Items.Any())
+{
+    <div class="alert alert-info">Your cart is empty.</div>
+}
+else
+{
+    <table class="table table-bordered table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Product</th>
+                <th style="width:120px;">Qty</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var (item, product) in CartVM.Items)
+            {
+                <tr>
+                    <td>@(product?.Name ?? "<span class=\"text-danger\">(deleted product)</span>")</td>
+                    <td>
+                        <input type="number"
+                               class="form-control form-control-sm text-center"
+                               min="0"
+                               value="@item.Quantity"
+                               style="max-width:80px;"
+                               @onchange="(e) => OnQtyChange(item.ProductId, e.Value?.ToString())" />
+                    </td>
+                    <td>@(product?.Price.ToString("C") ?? "-")</td>
+                    <td>@(product != null ? (product.Price * item.Quantity).ToString("C") : "-")</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @onclick="() => OnRemove(item.ProductId)">
+                            <i class="bi bi-trash"></i> Remove
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <h5>Total: <span class="badge bg-success fs-5">@CartVM.CartTotal.ToString("C")</span></h5>
+        <button class="btn btn-outline-danger" @onclick="OnClear">
+            <i class="bi bi-x-circle"></i> Clear cart
+        </button>
+    </div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        CartVM.LoadCart();
+    }
+
+    void OnQtyChange(string productId, string? value)
+    {
+        if (int.TryParse(value, out var q))
+        {
+            CartVM.UpdateQuantity(productId, q);
+            StateHasChanged();
+        }
+    }
+
+    void OnRemove(string id)
+    {
+        CartVM.Remove(id);
+    }
+
+    void OnClear()
+    {
+        CartVM.Clear();
+    }
+}

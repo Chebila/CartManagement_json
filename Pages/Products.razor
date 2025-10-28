@@ -1,0 +1,125 @@
+﻿@page "/products"
+@using ECommerceApp.Models
+@inject NavigationManager Navigation
+@inject ECommerceApp.ViewModels.ProductViewModel ProductVM
+
+<h3 class="mb-3">Products</h3>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h4 class="card-title mb-3">Add new product</h4>
+        <EditForm Model="@ProductVM.NewProduct" OnValidSubmit="@OnAddProduct">
+            <div class="mb-3">
+                <InputText class="form-control" @bind-Value="ProductVM.NewProduct.Name" placeholder="Name" />
+            </div>
+            <div class="mb-3">
+                <InputTextArea class="form-control" @bind-Value="ProductVM.NewProduct.Description" placeholder="Description" />
+            </div>
+            <div class="mb-3">
+                <InputNumber class="form-control" @bind-Value="ProductVM.NewProduct.Price" placeholder="Price" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </EditForm>
+    </div>
+</div>
+
+<hr />
+
+@if (ProductVM.Products == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    @if (!string.IsNullOrEmpty(ProductVM.ErrorMessage))
+    {
+        <div class="alert alert-danger">@ProductVM.ErrorMessage</div>
+    }
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in ProductVM.Products)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.Description</td>
+                    <td>@p.Price.ToString("C")</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm me-1" @onclick="() => OnStartEdit(p.Id)">Edit</button>
+                        <button class="btn btn-danger btn-sm me-1" @onclick="() => OnDelete(p.Id)">Delete</button>
+                        <button class="btn btn-success btn-sm" @onclick="() => OnAddToCartAndRedirect(p.Id)">Add to cart</button>
+                    </td>
+                </tr>
+                if (ProductVM.EditingProduct?.Id == p.Id)
+                {
+                    <tr>
+                        <td colspan="4">
+                            <EditForm Model="@ProductVM.EditingProduct" OnValidSubmit="@OnSaveEdit">
+                                <div class="row g-2 mb-2">
+                                    <div class="col-md-3">
+                                        <InputText class="form-control" @bind-Value="ProductVM.EditingProduct.Name" placeholder="Name" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <InputTextArea class="form-control" @bind-Value="ProductVM.EditingProduct.Description" placeholder="Description" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <InputNumber class="form-control" @bind-Value="ProductVM.EditingProduct.Price" placeholder="Price" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="submit" class="btn btn-primary btn-sm me-2">Save</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" @onclick="@OnCancelEdit">Cancel</button>
+                                    </div>
+                                </div>
+                            </EditForm>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        ProductVM.LoadProducts();
+    }
+
+    void OnAddProduct()
+    {
+        ProductVM.AddProduct();
+    }
+
+    void OnStartEdit(string id)
+    {
+        ProductVM.StartEdit(id);
+    }
+
+    void OnSaveEdit()
+    {
+        ProductVM.SaveEdit();
+    }
+
+    void OnCancelEdit()
+    {
+        ProductVM.CancelEdit();
+    }
+
+    void OnDelete(string id)
+    {
+        ProductVM.Delete(id);
+    }
+
+    void OnAddToCartAndRedirect(string productId)
+    {
+        ProductVM.AddToCart(productId);
+        Navigation.NavigateTo("/cart");
+    }
+}
