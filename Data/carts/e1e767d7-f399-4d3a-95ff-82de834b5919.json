@@ -1,10 +1,14 @@
 [
   {
-    "ProductId": "831e1307-5251-44dc-81ae-e7aa33965e96",
-    "Quantity": 1
+    "ProductId": "db890ae2-b944-456d-a009-78f9ab529f44",
+    "Quantity": 3
   },
   {
-    "ProductId": "4f96d488-e2f3-4dc9-baf2-f8a8997eb22c",
-    "Quantity": 3
+    "ProductId": "f90a9383-d9cd-49b8-b7c2-9c38d8c05827",
+    "Quantity": 2
+  },
+  {
+    "ProductId": "4fc0994a-6136-436e-b16c-5745989a6f11",
+    "Quantity": 1
   }
 ]

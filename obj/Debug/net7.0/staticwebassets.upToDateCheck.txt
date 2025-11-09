@@ -11,3 +11,7 @@ wwwroot\css\open-iconic\ICON-LICENSE
 wwwroot\css\open-iconic\README.md
 wwwroot\css\site.css
 wwwroot\favicon.png
+wwwroot\images\8295609f-b598-4d30-8f38-e690238d5dc9.jpg
+wwwroot\images\jacket.jpeg
+wwwroot\images\pants.png
+wwwroot\images\tshirt.jpeg

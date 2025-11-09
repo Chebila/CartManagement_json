@@ -32,5 +32,6 @@ C:\Users\douae\source\repos\ECommerceApp\obj\Debug\net7.0\ECommerceApp.genruntim
 C:\Users\douae\source\repos\ECommerceApp\obj\Debug\net7.0\ref\ECommerceApp.dll
 C:\Users\douae\source\repos\ECommerceApp\obj\Debug\net7.0\ECommerceApp.RazorAssemblyInfo.cache
 C:\Users\douae\source\repos\ECommerceApp\obj\Debug\net7.0\ECommerceApp.RazorAssemblyInfo.cs
-C:\Users\douae\source\repos\ECommerceApp\bin\Debug\net7.0\Data\products.json
+C:\Users\douae\source\repos\ECommerceApp\obj\Debug\net7.0\ECommerceApp.sourcelink.json
 C:\Users\douae\source\repos\ECommerceApp\bin\Debug\net7.0\Data\carts\e1e767d7-f399-4d3a-95ff-82de834b5919.json
+C:\Users\douae\source\repos\ECommerceApp\bin\Debug\net7.0\Data\products.json

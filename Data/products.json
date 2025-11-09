@@ -1,44 +1,30 @@
 [
   {
-    "Id": "831e1307-5251-44dc-81ae-e7aa33965e96",
+    "Id": "db890ae2-b944-456d-a009-78f9ab529f44",
     "Name": "t-shirt",
-    "Description": "comfortable t-shirt",
+    "Description": "comfortable t-shirt1",
     "Price": 70.50,
-    "ImageUrl": ""
+    "ImageUrl": "/images/tshirt.jpeg"
   },
   {
-    "Id": "a0ad0195-cfba-4e4d-8647-30859bb5b258",
+    "Id": "f90a9383-d9cd-49b8-b7c2-9c38d8c05827",
     "Name": "pants",
     "Description": "comfortable pants",
     "Price": 80.50,
-    "ImageUrl": ""
+    "ImageUrl": "/images/pants.png"
   },
   {
-    "Id": "4f96d488-e2f3-4dc9-baf2-f8a8997eb22c",
+    "Id": "9fcc7f00-a17d-4875-b844-a01d7f9db051",
     "Name": "jacket",
     "Description": "comfortable jacket",
     "Price": 200.50,
-    "ImageUrl": ""
+    "ImageUrl": "/images/jacket.jpeg"
   },
   {
-    "Id": "b7c4be94-8476-4e8b-92ba-eb3eafdf6a84",
-    "Name": "dress",
-    "Description": " comfortable dress",
-    "Price": 100,
-    "ImageUrl": ""
-  },
-  {
-    "Id": "5ed3cf9e-e8b0-4fd1-9e1e-aaa7d050ff94",
-    "Name": "dress11",
-    "Description": "comfortable dress11",
-    "Price": 700,
-    "ImageUrl": ""
-  },
-  {
-    "Id": "649e8878-3be3-4a33-b92f-4db954c25b6d",
-    "Name": "dress22",
-    "Description": "comfortable dress22",
-    "Price": 701,
-    "ImageUrl": ""
+    "Id": "4fc0994a-6136-436e-b16c-5745989a6f11",
+    "Name": "product",
+    "Description": "comfortable product",
+    "Price": 200,
+    "ImageUrl": "/images/8295609f-b598-4d30-8f38-e690238d5dc9.jpg"
   }
 ]

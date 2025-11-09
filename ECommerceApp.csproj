@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\carts\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>
